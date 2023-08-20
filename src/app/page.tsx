@@ -1,13 +1,12 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import layoutStyle from "./layout.module.css";
 
 export default function Page() {
   const router = useRouter();
 
   return (
-    <div className={layoutStyle.container}>
+    <div>
       <h1 className="text-base font-bold leading-7 text-gray-900">
         This is Root Page!
       </h1>
