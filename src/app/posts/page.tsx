@@ -4,6 +4,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 import utilsStyle from "../utils.module.css";
 import layoutStyle from "../layout.module.css";
+import remarkGfm from "remark-gfm";
 
 export default function Page() {
   const markdown = `
@@ -23,14 +24,7 @@ export default function Page() {
       <article>
         <h1 className={utilsStyle.headingXl}>タイトル</h1>
       </article>
-      <ReactMarkdown
-        rehypePlugins={[rehypeRaw, rehypeSanitize]}
-        components={
-          {
-            /* ... */
-          }
-        }
-      >
+      <ReactMarkdown rehypePlugins={[rehypeRaw, rehypeSanitize, remarkGfm]}>
         {markdown}
       </ReactMarkdown>
       <Link href="/profile">Profile</Link>
