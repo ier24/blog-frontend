@@ -1,6 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+/* 参考: https://tailwindcss.com/docs/functions-and-directives#directives */
 
+/* This injects Tailwind's base styles and any base styles registered by plugins. */
 @tailwind base;
+/* This injects Tailwind's component classes and any component classes registered by plugins. */
 @tailwind components;
+/* This injects Tailwind's utility classes and any utility classes registered by plugins. */
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  h2 {
+    @apply text-2xl font-bold;
+  }
+}
