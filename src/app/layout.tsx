@@ -1,28 +1,30 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { ReactNode } from "react";
+import { Metadata } from "next";
+import { Noto_Sans_JP } from "next/font/google";
 
-/**
- * this is root layout.
- * 必須。htmlタグとbodyタグを含まねばならず、アプリケーション内のすべてのページで共有される。
- * https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#layouts
- */
+// These styles apply to every route in the application
+import "@/styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const title = "This is My Blog";
+const description = "This is Blog written by Ryoma Hara";
 
-/**
- * https://nextjs.org/docs/app/building-your-application/optimizing/metadata
- */
 export const metadata: Metadata = {
-  title: "Blog written by Ryoma Hara",
-  description: "Blog written by Ryoma Hara",
+  title: title,
+  description: description,
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+const notoSansJP = Noto_Sans_JP({
+  display: "swap",
+  preload: false,
+});
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="ja">
-      <body className={inter.className}>{children}</body>
+    <html lang="ja" className={notoSansJP.className}>
+      <body>{children}</body>
     </html>
   );
 }
